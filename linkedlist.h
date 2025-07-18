@@ -22,7 +22,7 @@ struct linkedlist{
 	void insert(int val)
 	{
 		node*newnode=new node(val);
-		if(head=nullptr)
+		if(head==nullptr)
 		{
 			head=newnode;
 			temp=newnode;
