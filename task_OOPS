@@ -1,0 +1,257 @@
+
+/*problem statement 1*/
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+
+class student
+{
+    private:
+    int rollno;
+    int marks;
+    public:
+    string branch;
+    string name;
+    student(int no,int mark,string s,string k)  /*parameterised CONSTRUCTOR*/
+    {
+        rollno=no;
+        marks=mark;
+        branch=s;
+        name=k;
+    }
+    void setmarks(int result)  /*SETTER for marks*/
+    {
+           marks=result;
+    }
+    int getmarks()             /*GETTER  for marks*/
+    {
+        return marks;
+    }
+    void setrollno(int roll)   /*setter for rollno*/
+    {
+        rollno=roll;
+    }
+    int getrollno()    /*getter for rollno*/
+    {
+        return rollno;
+    }
+
+/* though we are using constructor to intialise the properties even they are private but we need to write public functions bcz
+constructor can intilise only at th time of object  creation but later to modify the private properties we need to write the public functions like setter even 
+even though at the time using constructor you cna't print the privat properties directly accessing we need to write getter function*/
+
+
+};
+int main()
+{
+    student s1(1,87,"CSE","SAI");
+    cout<< s1.getrollno()<<" "<<s1.getmarks()<<" "<<s1.branch<<" "<<s1.name <<endl;
+
+}
+
+
+
+/*PROBLEM STATEMENT 2*/
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+ 
+class BankAccount
+{
+   private:
+   int balance;
+   string accountnumber;
+   public:
+   string holdername;
+   BankAccount(int bal,string s,string k)  /*parameterised CONSTRUCTOR*/
+   {
+       balance=bal;
+       accountnumber=s;
+       holdername=k;
+   }
+   int checkBalance()
+   {
+    return balance;
+   }
+
+   int  withdraw(int amount)
+   {
+    if(amount<=0)
+    {
+        cout<<"invalid withdraw amount"<<endl;
+    }
+    else if(amount>balance)
+    {
+        cout<<"invalid amount"<<endl;
+    }
+    else
+    {
+        balance-=amount;
+        cout<<"withdrawl amount is:"<<amount<<endl;
+        cout<<"balanced amount is:"<<balance<<endl;
+    }
+   }
+
+
+   int deposit(int amount)
+   {
+     if(amount<=0)
+     {
+        cout<<"invalid deposit amount"<<endl;
+     }
+     else
+     {
+        balance+=amount;
+        cout<<"balance amount is:"<<balance<<endl;
+     }
+   }
+
+
+};
+int main()
+{
+    BankAccount a1(10000,"a1908","sai");
+
+
+}
+
+
+
+/*problem 3*/
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Product 
+{
+   private:
+    int price;
+    int stock;
+   public:
+   string productname;
+   string category;
+   Product(int x,int y,string s ,string k)
+   {
+    price=x;
+    stock=y;
+    productname=s;
+    category=k;
+   }
+   void setprice(int amount)  /*setter*/
+   {
+    price=amount;
+   } 
+   void setstock(int n)       /*settter*/
+   {
+    stock=n;
+   }
+   int getprice()   /*getter*/
+   {
+    return price;
+   }
+   int getstock()  /*getter*/
+   {
+    return stock;
+   }
+   void display()  /* method to display*/
+   {
+    cout<<getprice()<<getstock()<<productname<<category<<endl;
+   }
+
+};
+int main()
+{
+    Product p1(1000,2,"macbook","laptop");
+    p1.setprice(100);
+    p1.setstock(2);
+    p1.display();
+}
+
+
+/*problem 4*/
+
+#include<iostream>
+#include<string>
+using namespace std;
+class Book
+{
+    private:
+    int isbn;
+    int copiesavailable;
+    public:
+    string title;
+    string author;
+    Book(int n,int m,string s,string k)
+    {
+        isbn=n;
+        copiesavailable=m;
+        title=s;
+        author=k;
+    }
+    int addcopies(int n)  /*method*/
+    {
+        copiesavailable+=n;
+        return copiesavailable;
+    }
+    int issuebook()       /*method*/
+    {
+        copiesavailable-=1;
+        return copiesavailable;
+    }
+
+};
+int main()
+{
+    Book b1(12,45,"dome","thomas");
+   
+    cout<<b1.addcopies(5)<<endl;
+
+}
+
+
+
+/*problem 5*/
+#include<iostream>
+#include<string>
+using namespace std;
+class Employee
+{
+    private:
+    int salary;
+    int empID;
+    public:
+    string name;
+    string department;
+    Employee(int n,int m,string s,string k)
+    {
+        salary=n;
+        empID=m;
+        name=s;
+        department=k;
+    }
+    void setsalary(int amount)
+    {
+        salary=amount;
+    }
+    int getsalary()
+    {
+        return salary;
+    }
+    void display()
+    {
+        cout<<salary<<" "<<empID<<" "<<name<<" "<<department;
+    }
+
+};
+int main()
+{
+    Employee e1(1000,1,"sai","CSE");
+    e1.display();
+}
+
+
